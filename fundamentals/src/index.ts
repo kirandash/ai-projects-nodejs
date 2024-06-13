@@ -1,7 +1,12 @@
 import { OpenAI } from "openai";
 
 // Create an instance of the OpenAI class
-const openai = new OpenAI(process.env.OPENAI_API_KEY);
+if (!process.env.OPENAI_API_KEY) {
+  throw new Error("OPENAI_API_KEY is not set");
+}
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 const main = async () => {
   // Define the prompt
