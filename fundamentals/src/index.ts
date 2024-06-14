@@ -12,12 +12,17 @@ const openai = new OpenAI({
 const main = async () => {
   // Define the prompt
   const prompt =
-    "I need to start resistance training. Can you create a 7-day workout plan for me to ease into it? Limit it in 100 words or less.";
+    "I need to start resistance training. Can you create a 7-day workout plan for me to ease into it? Limit it in 30 words or less.";
 
   // send api request
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     messages: [
+      {
+        role: "system",
+        content:
+          'You respond with a greeting in the beginning. And you always respond in JSON format, like this: {"greeting": "greeting here", "plan": "plan here"}',
+      },
       {
         role: "user",
         content: prompt,
@@ -26,7 +31,8 @@ const main = async () => {
   });
 
   // Print the response
-  console.log(response.choices[0].message.content);
+  // this will be role "assistant" in the response
+  console.log(response.choices[0].message);
 };
 
 const encodePrompt = (prompt: string) => {
