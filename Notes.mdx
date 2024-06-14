@@ -105,3 +105,9 @@
 ### 2.3 Add chat history (context)
 
 - you can build this by simply pushing the user and assistant messages to an array and then using that array as the context for the next message
+
+### 2.4 Set token limit
+
+- Why keep context small?
+  - to control the cost
+  - to avoid any errors due to large context since gpt-3.5-turbo has a limit of 16,385
