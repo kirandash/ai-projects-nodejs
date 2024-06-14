@@ -111,3 +111,30 @@
 - Why keep context small?
   - to control the cost
   - to avoid any errors due to large context since gpt-3.5-turbo has a limit of 16,385
+
+### 3 OpenAI Function calling or Tools
+
+- https://platform.openai.com/docs/guides/function-calling
+- Why function calling?
+  - Chatgpt only has access to the trained data set ex: for gpt 3 the training data is till 2021
+  - to get the latest data we can use function calling
+    - ex: what is the latest price of bitcoin or what is the date today?
+    - to solve this we can use function calling. So the openai model can be prompted to call a function to get the latest data
+- so we can do
+  - access the latest data or real time data
+  - modify/mutation of data ex: in a DB
+  - act like a live chat bot which can interact with the user in real time
+
+Topics to cover:
+
+- setup function calling
+- parameters of the function
+- multiple functions
+- project for demo
+
+### 4. Setup function calling
+
+- Configure the function calling
+- Decide which function to call
+- Call the function
+- call openAI with the function response
