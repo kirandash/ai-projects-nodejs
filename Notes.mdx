@@ -82,3 +82,17 @@
   - number of choices: the number of completions to generate. default: 1
 - seed: 88888
   - If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed, and you should refer to the system_fingerprint response parameter to monitor changes in the backend.
+
+## 2 Simple Chat Project
+
+- Features:
+  - Chat with OpenAI
+  - Add chat history (context)
+  - Set token limit
+
+### 2.1 Setup new chat-app project
+
+- `npm init -y`
+- `npm i -D typescript ts-node @types/node`
+- `npx tsc --init`
+- `npm i openai tiktoken`
