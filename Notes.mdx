@@ -140,3 +140,22 @@ Topics to cover:
 - call openAI with the function response
 
 ### 5. Function calling parameters
+
+### 6. Project (Train Reservation System Assistant)
+
+- Product Requirement:
+
+  - User should be able to ask for trains between two stations
+    - ex: "what are the trains between Mumbai and Delhi?"
+  - Agent should respond with the train details
+    - ex: "There are two trains: Rajdhani and Shatabdi"
+  - User should be able to ask for making a reservation
+    - ex: "I want to book a ticket for Rajdhani"
+  - Agent should respond with the reservation details
+    - ex: "Your ticket is booked for Rajdhani. PNR is 123456"
+
+- Tech features to implement:
+  - Function calling
+    - getTrainsBetweenStations(source, destination)
+    - bookTicket(trainName, date)
+  - Context
