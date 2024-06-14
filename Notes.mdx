@@ -18,3 +18,41 @@
 
 - `npm i -D typescript ts-node @types/node`
 - `npx tsc --init`
+
+### 1.3 OpenAI and Open Source Models ex HuggingFace
+
+- What is a model?
+  - A model is a machine learning system that generates predictions based on data. It is the core of the OpenAI API.
+  - The OpenAI API provides a range of models that can be used to generate text, images, and more.
+- Large language models are the most popular type of model. They can generate human-like text based on a prompt.
+- OpenAI Models
+  - https://platform.openai.com/docs/models
+  - GPT-4o
+    - CONTEXT WINDOW: A context window is a window of text that the model uses to generate predictions. The context window size is the number of tokens in the window.
+    - training data date: date till which the model was trained
+    - price: cost per token
+    - https://platform.openai.com/docs/models/gpt-4o
+  - GPT-4 turbo
+  - GPT-3.5 Turbo
+  - DALL·E
+  - Whisper
+- open source models
+  - HuggingFace: https://huggingface.co/
+  - https://huggingface.co/models
+
+### 1.5 Tokens:
+
+- https://platform.openai.com/tokenizer
+- Tokens are the smallest unit of text that the model can generate. The model generates text by predicting the next token in a sequence of tokens.
+- Tokens can be words, punctuation, or other characters.
+- The model generates tokens based on the context window, which is a window of text that the model uses to generate predictions.
+- The context window size is the number of tokens in the window.
+- Learn more about tokenization: https://huggingface.co/learn/nlp-course/en/chapter6/1?fw=pt
+- the pricing depends on tokens:
+  - https://openai.com/api/pricing/
+- see usage at: https://platform.openai.com/usage
+- how to check tokens in playground:
+  you can go to the playground at: https://platform.openai.com/playground/chat?models=gpt-4o
+- to check tokens in nodejs project:
+  - https://github.com/dqbd/tiktoken
+  - `npm i tiktoken`
