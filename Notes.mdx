@@ -62,3 +62,23 @@
 - System
 - User
 - Assistant
+
+### 1.8 OpenAI API and playground parameters
+
+- Temperature
+  - The temperature parameter controls the randomness of the model's predictions. A higher temperature will result in more random predictions, while a lower temperature will result in more predictable predictions.
+  - recommended range: 0.1 to 1.0
+- Top P:
+  - The top_p parameter controls the diversity of the model's predictions. A higher top_p will result in more diverse predictions, while a lower top_p will result in more focused predictions.
+  - ex: the top_p parameter is set to 0.9, the model will only consider the top 90% of tokens with the highest probabilities when generating predictions.
+  - recommended range: 0.1 to 0.9
+- Maximum tokens
+  - The max_tokens parameter controls the maximum number of tokens that the model will generate in a single response. If the model reaches the maximum number of tokens, it will stop generating text.
+  - recommended range: 16 to 2048
+- Frequency penalty:
+  - The frequency_penalty parameter controls the model's tendency to repeat tokens that have already been generated. A higher frequency_penalty will result in less repetition, while a lower frequency_penalty will result in more repetition.
+  - recommended range: 0.1 to 2.0
+- n:
+  - number of choices: the number of completions to generate. default: 1
+- seed: 88888
+  - If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed, and you should refer to the system_fingerprint response parameter to monitor changes in the backend.
