@@ -2,14 +2,14 @@ import { readFileSync, writeFileSync } from "fs";
 import OpenAI from "openai";
 import { join } from "path";
 
-type DataWithEmbeddings = {
+export type DataWithEmbeddings = {
   input: string;
   embeddings: number[];
 };
 
 const openai = new OpenAI();
 
-const generateEmbeddings = async (input: string | string[]) => {
+export const generateEmbeddings = async (input: string | string[]) => {
   const response = await openai.embeddings.create({
     input: input,
     model: "text-embedding-3-small",
@@ -18,7 +18,7 @@ const generateEmbeddings = async (input: string | string[]) => {
   return response;
 };
 
-const loadInputJson = <T>(fileName: string): T => {
+export const loadInputJson = <T>(fileName: string): T => {
   const path = join(__dirname, fileName);
   const rawInputData = readFileSync(path);
   return JSON.parse(rawInputData.toString());
@@ -33,7 +33,7 @@ const saveEmbeddingsToJson = (embeddings: any, fileName: string) => {
 };
 
 const main = async () => {
-  const input = loadInputJson<string[]>("input.json");
+  const input = loadInputJson<string[]>("inputstatements.json");
   const embeddings = await generateEmbeddings(input);
   const dataWithEmbeddings: DataWithEmbeddings[] = input.map(
     (input, index) => ({
@@ -41,9 +41,9 @@ const main = async () => {
       embeddings: embeddings.data[index].embedding,
     })
   );
-  saveEmbeddingsToJson(dataWithEmbeddings, "dataWithEmbeddings.json");
+  saveEmbeddingsToJson(dataWithEmbeddings, "dataWithEmbeddings2.json");
 };
 
-main();
+// main();
 
-generateEmbeddings(["Hello", "world"]);
+// generateEmbeddings(["Hello", "world"]);
