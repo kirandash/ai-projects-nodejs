@@ -112,7 +112,9 @@
   - to control the cost
   - to avoid any errors due to large context since gpt-3.5-turbo has a limit of 16,385
 
-### 3 OpenAI Function calling or Tools
+## 3 OpenAI Function calling or Tools
+
+### 3.1 Introduction
 
 - https://platform.openai.com/docs/guides/function-calling
 - Why function calling?
@@ -132,16 +134,16 @@ Topics to cover:
 - multiple functions
 - project for demo
 
-### 4. Setup function calling
+### 3.2 Setup function calling
 
 - Configure the function calling
 - Decide which function to call
 - Call the function
 - call openAI with the function response
 
-### 5. Function calling parameters
+### 3.3 Function calling parameters
 
-### 6. Project (Train Reservation System Assistant)
+### 3.4 Project (Train Reservation System Assistant)
 
 - Product Requirement:
 
@@ -159,3 +161,45 @@ Topics to cover:
     - getTrainsBetweenStations(source, destination)
     - bookTicket(trainName, date)
   - Context
+
+## 4. Embedding and Similarity
+
+- Concepts
+  - what are embeddings?
+  - what are openai embeddings?
+  - What is similarity?
+  - Project: Recommendation system
+
+### 4.1 Embeddings
+
+- Embeddings are numerical representations of data ex: text, images, audio etc.
+- Text embeddings are numerical representations of text data
+- Embeddings take the form of a vector ie a list of numbers
+- Embedding latent space: the space in which the items are placed close to each other if they are similar and far if they are dissimilar
+
+- Similarity
+
+  - Similarity is a measure of how similar two items are
+  - Dot product: a mathematical operation that gives a measure of similarity between two vectors ex: refer the image dot-product-similarity.png
+  - Cosine similarity: a measure of similarity between two non-zero vectors of an inner product space that measures the cosine of the angle between them
+
+- Embedding Models:
+- https://platform.openai.com/docs/guides/embeddings/embedding-models
+  - OpenAI has a range of embedding models that can be used to generate embeddings for text data
+  - openai embedding models ex:
+    - text-embedding-3-small (higher PAGES PER DOLLAR hence cheaper)
+    - text-embedding-3-large
+    - text-embedding-ada-002
+- text ---> embedding model ---> embeddings
+  - ex: "hello world" ---> text-embedding-3-small ---> [0.1, 0.2, 0.3, ...]
+- why we need to create embeddings?
+  - to compare the similarity between two texts
+  - to implement recommendation systems
+- read more about embeddings: https://openai.com/index/new-embedding-models-and-api-updates/
+- open ai can have up to 3072 embedding dimensions
+- hugging face leader board: https://huggingface.co/spaces/mteb/leaderboard
+  - can use this to compare the embeddings dimeansion
+
+### 4.2 OpenAI Embeddings
+
+- `openai.embeddings.create`
