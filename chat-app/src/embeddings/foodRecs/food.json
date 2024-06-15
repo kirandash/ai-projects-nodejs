@@ -1,0 +1,14 @@
+[
+  {
+    "name": "croissants",
+    "description": "buttery, flaky, delicious, french"
+  },
+  {
+    "name": "baguette",
+    "description": "crusty, chewy, french"
+  },
+  {
+    "name": "Biryani",
+    "description": "spicy, flavorful, Indian"
+  }
+]
