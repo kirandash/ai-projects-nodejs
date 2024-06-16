@@ -216,3 +216,59 @@ Topics to cover:
   - Agent should respond with the recommendations of dishes
     - ex: "You may like croissants, baguettes, and macarons"
 - for prod level project use dataset like: https://www.kaggle.com/datasets?search=food
+
+## 5 Vector Databases - Pinecone and ChromaDB
+
+### 5.1 Intro the section
+
+- What vector DB is and why do we need them in a production setup
+- We will learn about
+
+  - ChromaDB - open source vector DB, run locally on our machine
+    - https://www.trychroma.com/
+    - python and Docker installation
+  - PineCone:
+    - managed vector DB,
+    - this is going to need registration of our account
+
+- Project: "Chat with your own data"
+  - store the data into a vector DB
+  - Ask a question
+  - query the DB for the most relevant data with higher similarity
+  - in the end, use the most relevant data and OpenAI API
+
+### 5.2 What is Vector DB and why vector DB?
+
+- Why do we need vector DB and what was the problem with traditional DB?
+  - Traditional DBs are not good for similarity search
+  - Vector DBs are optimized for similarity search
+  - ex: for recommendation systems, chatbots, search engines etc
+- We need vector DB for better data processing and retrieval
+- Poular vector DBs:
+
+  - Pinecone
+  - Chroma
+  - Redis
+  - PostgreSQL - with the help of plugins like: PG Vector extension
+  - Milvus: https://milvus.io/
+  - Weaviate: https://weaviate.io/
+  - Annoy: https://github.com/spotify/annoy
+
+- What are vector databases?
+  - Vector databases are databases that store and query vector data
+  - Vector data is data that can be represented as a vector, which is a list of numbers
+  - Vector databases are optimized for similarity search, which is the process of finding items that are similar to a given item
+  - Vector databases are used in a wide range of applications, including recommendation systems, search engines, and natural language processing
+- How vector databases are different from traditional databases?
+
+  - Storage:
+    - Traditional databases are optimized for storing and querying structured data, such as text, numbers, and dates
+    - Vector databases are optimized for storing and querying vector data, which is a list of numbers that represents an item. vector dbs holds data + the embeddings of the data
+  - Query:
+    - Vector databases use specialized algorithms and data structures to efficiently search for items that are similar to a given item ex: cosine similarity and dot product similarity. vecotr db uses embeddings as query parameters
+    - while traditional databases use SQL to query based on values match
+  - Algorithms:
+    - Vector databases use algorithms such as nearest neighbor search to find items that are similar to a given item
+    - Traditional databases use algorithms such as B-trees and hash tables to search for items based on their values
+
+- ![Vector DB System Design](./assets/vector-db-system-design.png)
