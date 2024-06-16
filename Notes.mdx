@@ -272,3 +272,26 @@ Topics to cover:
     - Traditional databases use algorithms such as B-trees and hash tables to search for items based on their values
 
 - ![Vector DB System Design](./assets/vector-db-system-design.png)
+
+### 5.3 ChromaDB set up on machine
+
+- ChromaDB is an open-source vector database that is optimized for similarity search
+- it is written in python
+- requirement: python and docker
+  - install docker from : https://www.docker.com/products/docker-desktop/
+  - install docker vscode extension (optional)
+- docs: https://www.trychroma.com/
+- https://github.com/chroma-core/chroma
+
+- check docker: `docker --version`
+- let's deploy a chroma docker image:
+  - https://docs.trychroma.com/deployment/aws#docker
+  - `docker pull chromadb/chroma`
+  - `docker run -p 8000:8000 chromadb/chroma`
+  - once running you can test the heartbeat at: http://0.0.0.0:8000/api/v1
+
+### 5.4 ChromaDB client setup in chat-app
+
+- `npm i chromadb`
+- you can check list of collections at: http://0.0.0.0:8000/api/v1/collections
+- list of APIs: http://0.0.0.0:8000/docs

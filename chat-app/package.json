@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r ts-node/register --env-file=.env src/embeddings/foodRecs/FoodRec.ts",
+    "start": "node -r ts-node/register --env-file=.env src/chroma/Client.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +16,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "chromadb": "^1.8.1",
     "openai": "^4.51.0",
     "tiktoken": "^1.0.15"
   }
