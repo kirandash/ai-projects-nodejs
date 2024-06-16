@@ -231,10 +231,12 @@ Topics to cover:
     - managed vector DB,
     - this is going to need registration of our account
 
-- Project: "Chat with your own data"
+- Project: "FAQ Chatbot"
   - store the data into a vector DB
+    - before storing makes sure to break the data into chunks
   - Ask a question
   - query the DB for the most relevant data with higher similarity
+    - it will find the most relevant chunk of data
   - in the end, use the most relevant data and OpenAI API
 
 ### 5.2 What is Vector DB and why vector DB?
@@ -301,3 +303,11 @@ Topics to cover:
 - Read more about chromadb embed integration: https://docs.trychroma.com/integrations#%F0%9F%A7%AC-embedding-integrations
 
 - open ai model integration: https://docs.trychroma.com/integrations/openai
+
+### 5.5 Embedding Query
+
+- we will learn how to query based on embeddings using similarity search
+- query will return must relevant results based on the similarity
+- context injection: we will provide openai with context for a query
+
+### 5.6 Project: FAQ Chatbot
