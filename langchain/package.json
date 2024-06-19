@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r ts-node/register --env-file=.env src/basicrag/Cheerio.ts"
+    "start": "node -r ts-node/register --env-file=.env src/basicrag/PDFLoader.ts"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,8 @@
   "dependencies": {
     "@langchain/community": "^0.2.12",
     "cheerio": "^1.0.0-rc.12",
-    "langchain": "^0.2.5"
+    "langchain": "^0.2.5",
+    "pdf-parse": "^1.1.1"
   },
   "devDependencies": {
     "@types/node": "^20.14.5",
