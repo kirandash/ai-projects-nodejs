@@ -1,0 +1,21 @@
+{
+  "name": "langchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r ts-node/register --env-file=.env src/Model.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "langchain": "^0.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
