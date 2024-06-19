@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r ts-node/register --env-file=.env src/basicrag/PDFLoader.ts"
+    "start": "node -r ts-node/register --env-file=.env src/basicrag/ChromaDB.ts"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@langchain/community": "^0.2.12",
     "cheerio": "^1.0.0-rc.12",
+    "chromadb": "^1.8.1",
     "langchain": "^0.2.5",
     "pdf-parse": "^1.1.1"
   },
