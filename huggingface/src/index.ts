@@ -1,4 +1,5 @@
 import { HfInference } from "@huggingface/inference";
+import { writeFile } from "fs";
 
 if (!process.env.HUGGING_FACE_TOKEN) {
   throw new Error("HUGGING_FACE_TOKEN is required");
@@ -48,7 +49,24 @@ const questionAnswering = async () => {
   console.log(result);
 };
 
+const textToImage = async () => {
+  // this will be a blob
+  const result = await inference.textToImage({
+    inputs: "Squirrel eating a nut",
+    model: "stabilityai/stable-diffusion-2",
+    parameters: {
+      negative_prompt: "blurry",
+    },
+  });
+  // transfer blob
+  const buffer = Buffer.from(await result.arrayBuffer());
+  writeFile("image.jpg", buffer, () => {
+    console.log("image saved");
+  });
+};
+
 // generateEmbedding();
 // translate();
 // translateWithParam();
-questionAnswering();
+// questionAnswering();
+textToImage();
