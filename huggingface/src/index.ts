@@ -14,4 +14,41 @@ const generateEmbedding = async () => {
   console.log(result);
 };
 
-generateEmbedding();
+const translate = async () => {
+  const result = await inference.translation({
+    inputs: "Hello world",
+    // model: "Helsinki-NLP/opus-mt-en-de",
+    model: "t5-small",
+  });
+  console.log(result);
+};
+
+const translateWithParam = async () => {
+  const result = await inference.translation({
+    inputs: "Hola mundo",
+    // model: "Helsinki-NLP/opus-mt-en-de",
+    model: "facebook/nllb-200-distilled-600M",
+    // @ts-ignore
+    parameters: {
+      src_lang: "spa_Latn",
+      tgt_lang: "eng-Latn",
+    },
+  });
+  console.log(result);
+};
+
+const questionAnswering = async () => {
+  const result = await inference.questionAnswering({
+    inputs: {
+      context:
+        "The Apollo program, also known as Project Apollo, was the third United States human spaceflight program carried out by the National Aeronautics and Space Administration (NASA), which accomplished landing the first humans on the Moon from 1969 to 1972.",
+      question: "Who is Einstein?",
+    },
+  });
+  console.log(result);
+};
+
+// generateEmbedding();
+// translate();
+// translateWithParam();
+questionAnswering();
